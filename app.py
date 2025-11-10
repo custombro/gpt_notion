@@ -22,3 +22,9 @@ def debug():
 
 # ❌ app.run() 제거! (Render에서는 사용 금지)
 # 절대 넣지 말 것
+from gpt_auto_notion import automation_handler
+
+@app.route("/run_automation")
+def run_auto():
+    result = automation_handler()
+    return jsonify(result), 200
